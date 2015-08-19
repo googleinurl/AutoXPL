@@ -37,11 +37,11 @@ echo "{$c['c1']}\n\t\t
 \n\t\t[ I N U R L  -  B R A S I L ] - [ By GoogleINURL ]\n\t\tNeither war between hackers, nor peace for the system\n
 \n\t{$c['c2']}[+] [SCRIPT]: AutoXPL 1.0 / EXECUTE COMMAND\n\t[+] [ help ]: --help\n\n{$c['c0']}";
 $menu = "{$c['c1']}
-    -t            : SET TARGET.
-    -f            : SET FILE TARGETS.
-    -range        : SET RANGE IP.
-    -range-rand   : SET NUMBE IP RANDOM.
-    -xpl          : SET COMMAND XPL.
+    -t             : SET TARGET.
+    -f             : SET FILE TARGETS.
+    --range        : SET RANGE IP.
+    --range-rand   : SET NUMBE IP RANDOM.
+    --xpl          : SET COMMAND XPL.
     Execute:
                   php AutomatedXPL.php -t target   -xpl './xpl _TARGET_'
                   php AutomatedXPL.php -f targets.txt  -xpl './xpl _TARGET_'
@@ -142,10 +142,10 @@ function __exec($params) {
     echo "{$params['c']['c1']}[+][{$params['count']}/{$params['total']}]{$params['line']}\n";
     echo "{$params['c']['c1']}[+][ TARGET ]:: {$params['c']["c7"]}{$params['target']}\n";
     echo "{$params['c']['c1']}[+]|__\n";
-    echo "      |[ COMMAND XPL ]:: {$params['xpl']}\n";
+    $cmd = str_replace("_TARGET_", $params['target'], $params['xpl']);
+    echo "      |[ COMMAND XPL ]:: {$cmd}\n";
     echo "[+]|__\n";
     echo "      |[P R O C E S S]\n\n";
-    $cmd = str_replace("_TARGET_", $params['target'], $params['xpl']);
     echo $params['c']['c2'];
     system($cmd);
     echo $params['c']['c0'];
