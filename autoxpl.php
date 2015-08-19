@@ -43,10 +43,10 @@ $menu = "{$c['c1']}
     --range-rand   : SET NUMBE IP RANDOM.
     --xpl          : SET COMMAND XPL.
     Execute:
-                  php AutomatedXPL.php -t target   -xpl './xpl _TARGET_'
-                  php AutomatedXPL.php -f targets.txt  -xpl './xpl _TARGET_'
-                  php AutomatedXPL.php --range '200.1.10.1,200.1.10.255' -xpl './xpl _TARGET_'
-                  php AutomatedXPL.php --range-rand 20 -xpl './xpl _TARGET_'
+                  php AutomatedXPL.php -t target   --xpl './xpl _TARGET_'
+                  php AutomatedXPL.php -f targets.txt  --xpl './xpl _TARGET_'
+                  php AutomatedXPL.php --range '200.1.10.1,200.1.10.255' --xpl './xpl _TARGET_'
+                  php AutomatedXPL.php --range-rand 20 --xpl './xpl _TARGET_'
 \n{$c['c0']}";
 echo isset($op_['help']) ? exit($menu) : NULL;
 $params = array(
